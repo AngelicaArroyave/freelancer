@@ -11,20 +11,53 @@
 
 html {
     font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after { /* Se palica a todos los elementos */
+    box-sizing: inherit;
 }
 
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--lightGray 0%, var(--white) 100%)); /* Prinero se coloca la dirección, es decir, de abajo para arriba y con qué colocre inicia y termina */
 }
 
-.title {
-    text-align: center;
+h1 {
     font-size: 3.8rem; /* 1rem = 10px */
 }
 
-.title span {
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.button {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 10px 30px; /* También se puede poner como 1rem 3rem */
+    margin-top: 10px;
     font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .8rem;
+    width: 80%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .button {
+        width: auto;
+    }
 }
 
 .container {
@@ -37,9 +70,34 @@ body {
     /* margin: 0 auto 0 auto; */
 }
 
+.content-hero {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(0, 0, 0, .6); Como se usaba antes */
+    background-color: rgba(0 0 0 / 70%); /* Como se usa actualmente para colocar un poco trasparente la imagen */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Para centrar horizontalmente */
+    justify-content: center; /* Para centrar verticalmente */
+}
+
+.content-hero h2,
+.content-hero p {
+    color: var(--white);
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
 .nav-bg {
     background-color: var(--secondary);
-
 }
 
 .primary-navigation {
@@ -67,4 +125,27 @@ body {
 .primary-navigation a:hover {
     background-color: var(--lightGray);
     color: var(--dark);
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,1);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,1);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,1);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.title span {
+    font-size: 20px;
+}
+
+.ubication {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ubication p {
+    padding: 10px;
 }
